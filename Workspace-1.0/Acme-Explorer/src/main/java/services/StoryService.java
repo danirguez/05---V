@@ -86,7 +86,6 @@ public class StoryService {
 		Explorer ex;
 		ex = this.explorerService.findByPrincipal();
 		Collection<Story> stories = new ArrayList<Story>();
-		stories.addAll(trip.getStory());
 		
 		Story story;
 		story = create();
@@ -99,7 +98,6 @@ public class StoryService {
 		
 		stories.add(story);
 		
-		trip.setStory(stories);
 		Assert.notNull(stories);
 		return story;
 	}

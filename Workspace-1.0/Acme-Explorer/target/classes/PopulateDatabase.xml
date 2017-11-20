@@ -1552,16 +1552,6 @@
 			<value>Requirement 2</value>
 		</list>
 	</property>
-	<property name="survival">
-		<list>
-			<ref bean="survival1"/>
-		</list>
-	</property>
-	<property name="story">
-		<list>
-			<ref bean="story1"/>
-		</list>
-	</property>
 	<property name="value">
 		<list>
 			<ref bean="value1"/>
@@ -1570,16 +1560,6 @@
 	<property name="stage">
 		<list>
 			<ref bean="stage1"/>
-		</list>
-	</property>
-	<property name="audit">
-		<list>
-			<ref bean="audit1"/>
-			<ref bean="audit2"/>
-		</list>
-	</property>
-	<property name="note">
-		<list>
 		</list>
 	</property>
 	</bean>
@@ -1612,16 +1592,6 @@
 			<ref bean="application4"/>
 		</list>
 	</property>
-	<property name="survival">
-		<list>
-			<ref bean="survival2"/>
-		</list>
-	</property>
-	<property name="story">
-		<list>
-			<ref bean="story2"/>
-		</list>
-	</property>
 	<property name="value">
 		<list>
 			<ref bean="value2"/>
@@ -1630,16 +1600,6 @@
 	<property name="stage">
 		<list>
 			<ref bean="stage2"/>
-		</list>
-	</property>
-	<property name="audit">
-		<list>
-		</list>
-	</property>
-	<property name="note">
-		<list>
-			<ref bean="note1"/>
-			<ref bean="note2"/>
 		</list>
 	</property>
 	</bean>
