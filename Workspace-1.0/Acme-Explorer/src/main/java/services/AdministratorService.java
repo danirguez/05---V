@@ -198,22 +198,22 @@ public class AdministratorService {
 		res = this.administratorRepository.tripsLegalTextReferenced();
 		return res;
 	}
-
-	public Object[] avgMinMaxSqtr3() {
-		Object[] res;
-		res = this.administratorRepository.avgMinMaxSqtr3();
-		return res;
-	}
-
-	public Object[] avgMinMaxSqtr4() {
-		Object[] res;
-		res = this.administratorRepository.avgMinMaxSqtr4();
-		return res;
-	}
-
-	public Object[] avgMinMaxSqtr5() {
-		Object[] res;
-		res = this.administratorRepository.avgMinMaxSqtr5();
-		return res;
-	}
+	//TODO: DESCOMENTAR
+//	public Object[] avgMinMaxSqtr3() {
+//		Object[] res;
+//		res = this.administratorRepository.avgMinMaxSqtr3();
+//		return res;
+//	}
+//
+//	public Object[] avgMinMaxSqtr4() {
+//		Object[] res;
+//		res = this.administratorRepository.avgMinMaxSqtr4();
+//		return res;
+//	}
+//
+//	public Object[] avgMinMaxSqtr5() {
+//		Object[] res;
+//		res = this.administratorRepository.avgMinMaxSqtr5();
+//		return res;
+//	}
 }

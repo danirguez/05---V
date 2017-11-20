@@ -20,8 +20,6 @@ import domain.LegalText;
 import domain.Manager;
 import domain.Ranger;
 import domain.Stage;
-import domain.Story;
-import domain.Survival;
 import domain.Trip;
 import domain.Value;
 
@@ -52,12 +50,6 @@ public class TripServiceTest extends AbstractTest {
 
 	@Autowired
 	private ApplicationService applicationService;
-
-	@Autowired
-	private SurvivalService survivalService;
-
-	@Autowired
-	private StoryService storyService;
 
 	@Autowired
 	private StageService stageService;
@@ -95,15 +87,11 @@ public class TripServiceTest extends AbstractTest {
 		Trip trip;
 		trip = this.tripService.create();
 
-		Collection<Survival> survival = new ArrayList<Survival>();
-		Collection<Story> story = new ArrayList<Story>();
 		Collection<Stage> stage = new ArrayList<Stage>();
 		Collection<Application> application = new ArrayList<Application>();
 		Collection<Value> value = new ArrayList<Value>();
 		Ranger ranger;
-		Survival survival1;
 		Manager manager;
-		Story story1;
 		Stage stage1;
 		Category category;
 		LegalText legalText;
@@ -142,12 +130,7 @@ public class TripServiceTest extends AbstractTest {
 		reason = "Reason";
 
 		ranger = this.rangerServices.findOne(super.getEntityId("ranger1"));
-		survival1 = this.survivalService
-				.findOne(super.getEntityId("survival1"));
-		survival.add(survival1);
 		manager = this.managerService.findOne(super.getEntityId("manager1"));
-		story1 = this.storyService.findOne(super.getEntityId("story1"));
-		story.add(story1);
 		stage1 = this.stageService.findOne(super.getEntityId("stage1"));
 		stage.add(stage1);
 		category = this.categoryServices.findOne(super.getEntityId("CATEGORY"));
@@ -170,9 +153,7 @@ public class TripServiceTest extends AbstractTest {
 		trip.setReason(reason);
 		trip.setCancelled(cancelled);
 		trip.setRanger(ranger);
-		trip.setSurvival(survival);
 		trip.setManager(manager);
-		trip.setStory(story);
 		trip.setStage(stage);
 		trip.setCategory(category);
 		trip.setLegalText(legalText);

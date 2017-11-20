@@ -26,7 +26,11 @@ public interface ActorRepository extends JpaRepository<Actor, Integer> {
 	Collection<Curriculum> findCurriculumRangerByTrip(int id);
 
 	// 30.2
-	@Query("select t.audit from Trip t where t.id = ?1")
+//	@Query("select t.audit from Trip t where t.id = ?1")
+//	Collection<Audit> findAuditsByTrip(int id);
+	
+	// 30.2
+	@Query("select a from Audit a join a.trip t where t.id = ?1")
 	Collection<Audit> findAuditsByTrip(int id);
 
 	// 11.4

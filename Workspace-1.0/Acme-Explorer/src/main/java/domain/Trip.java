@@ -146,15 +146,11 @@ public class Trip extends DomainEntity {
 	// Relationships
 
 	private Ranger ranger;
-	private Collection<Survival> survival;
 	private Manager manager;
-	private Collection<Story> story;
 	private Collection<Stage> stage;
 	private Category category;
 	private LegalText legalText;
 	private Collection<Application> application;
-	private Collection<Audit> audit;
-	private Collection<Note> note;
 	private Collection<Value> value;
 
 	@Valid
@@ -181,17 +177,6 @@ public class Trip extends DomainEntity {
 
 	@Valid
 	@NotNull
-	@OneToMany(mappedBy = "trip")
-	public Collection<Survival> getSurvival() {
-		return survival;
-	}
-
-	public void setSurvival(Collection<Survival> survival) {
-		this.survival = survival;
-	}
-
-	@Valid
-	@NotNull
 	@ManyToOne(optional = false)
 	public Manager getManager() {
 		return manager;
@@ -199,16 +184,6 @@ public class Trip extends DomainEntity {
 
 	public void setManager(Manager manager) {
 		this.manager = manager;
-	}
-
-	@Valid
-	@OneToMany(mappedBy = "trip")
-	public Collection<Story> getStory() {
-		return story;
-	}
-
-	public void setStory(Collection<Story> story) {
-		this.story = story;
 	}
 
 	@Valid
@@ -251,27 +226,5 @@ public class Trip extends DomainEntity {
 
 	public void setApplication(Collection<Application> application) {
 		this.application = application;
-	}
-
-	@Valid
-	@NotNull
-	@OneToMany(mappedBy = "trip")
-	public Collection<Audit> getAudit() {
-		return audit;
-	}
-
-	public void setAudit(Collection<Audit> audit) {
-		this.audit = audit;
-	}
-
-	@Valid
-	@NotNull
-	@OneToMany(mappedBy = "trip")
-	public Collection<Note> getNote() {
-		return note;
-	}
-
-	public void setNote(Collection<Note> note) {
-		this.note = note;
 	}
 }
