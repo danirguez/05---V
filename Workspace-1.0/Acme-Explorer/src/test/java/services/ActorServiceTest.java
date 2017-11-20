@@ -148,7 +148,7 @@ public class ActorServiceTest extends AbstractTest {
 	public void testFindAuditByTrip() {
 		int i;
 		Trip trip;
-		trip = this.tripService.findOne(super.getEntityId("trip2"));
+		trip = this.tripService.findOne(super.getEntityId("trip1"));
 		Assert.notNull(trip);
 		i = trip.getId();
 

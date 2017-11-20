@@ -254,6 +254,8 @@ public class ActorService {
 	public Collection<Audit> findAuditByTrip(int id) {
 		Collection<Audit> res = new ArrayList<Audit>();
 		res.addAll(actorRepository.findAuditsByTrip(id));
+		res = actorRepository.findAuditsByTrip(id);
+		
 		Assert.notNull(res);
 		return res;
 

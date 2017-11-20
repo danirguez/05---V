@@ -11,15 +11,11 @@ import org.springframework.util.Assert;
 
 import repositories.TripRepository;
 import domain.Application;
-import domain.Audit;
 import domain.Category;
 import domain.LegalText;
 import domain.Manager;
-import domain.Note;
 import domain.Ranger;
 import domain.Stage;
-import domain.Story;
-import domain.Survival;
 import domain.Trip;
 import domain.Value;
 
@@ -51,28 +47,20 @@ public class TripService {
 
 	public Trip create() {
 		Manager m = new Manager();
-		Collection<Audit> audits = new ArrayList<Audit>();
-		Collection<Note> notes = new ArrayList<Note>();
 		Collection<Application> applications = new ArrayList<Application>();
-		Collection<Story> stories = new ArrayList<Story>();
 		Collection<Stage> stages = new ArrayList<Stage>();
 		LegalText legalText = new LegalText();
 		Category category = new Category();
 		Ranger ranger = new Ranger();
-		Collection<Survival> survivals = new ArrayList<Survival>();
 		Collection<Value> value = new ArrayList<Value>();
 		Trip trip = new Trip();
 
 		trip.setManager(m);
-		trip.setAudit(audits);
-		trip.setNote(notes);
 		trip.setApplication(applications);
-		trip.setStory(stories);
 		trip.setStage(stages);
 		trip.setLegalText(legalText);
 		trip.setCategory(category);
 		trip.setRanger(ranger);
-		trip.setSurvival(survivals);
 		trip.setValue(value);
 		return trip;
 	}

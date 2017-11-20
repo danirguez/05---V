@@ -76,14 +76,21 @@ public interface AdministratorRepository extends JpaRepository<Administrator, In
 	Double tripsLegalTextReferenced();
 
 	// B-1
-	@Query("select avg(t.note.size), min(t.note.size), max(t.note.size), sqrt(sum(t.note.size*t.note.size)/count(t.note.size)-(avg(t.note.size)*avg(t.note.size))) from Trip t")
-	Object[] avgMinMaxSqtr3();
+//	@Query("select avg(t.note.size), min(t.note.size), max(t.note.size), sqrt(sum(t.note.size*t.note.size)/count(t.note.size)-(avg(t.note.size)*avg(t.note.size))) from Trip t")
+//	Object[] avgMinMaxSqtr3();
+	
+	//TODO: HACER QUERY
+	// B-1
+//	@Query("select avg(n.size), min(n.size), max(n.size), sqrt(sum(n.size*n.size)/count(n.size)-(avg(n.size)*avg(n.size))) from Note n")
+//	Object[] avgMinMaxSqtr3();
 
+	//TODO: HACER QUERY
 	// B-2
-	@Query("select avg(t.audit.size), min(t.audit.size), max(t.audit.size), sqrt(sum(t.audit.size*t.audit.size)/count(t.audit.size)-(avg(t.audit.size)*avg(t.audit.size))) from Trip t")
-	Object[] avgMinMaxSqtr4();
+//	@Query("select avg(t.audit.size), min(t.audit.size), max(t.audit.size), sqrt(sum(t.audit.size*t.audit.size)/count(t.audit.size)-(avg(t.audit.size)*avg(t.audit.size))) from Trip t")
+//	Object[] avgMinMaxSqtr4();
 
+	//TODO: HACER QUERY
 	// B-3
-	@Query("select count(t)/((select count(t2) from Trip t2)+0.0) from Trip t where t.audit.size=1")
-	Object[] avgMinMaxSqtr5();
+//	@Query("select count(t)/((select count(t2) from Trip t2)+0.0) from Trip t where t.audit.size=1")
+//	Object[] avgMinMaxSqtr5();
 }
