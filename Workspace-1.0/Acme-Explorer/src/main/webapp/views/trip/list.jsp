@@ -33,24 +33,26 @@
 	<display:column property="title" title="${titleHeader}" sortable="true" />
 
 	<spring:message code="trip.description" var="descriptionHeader" />
-	<display:column property="description" title="${descriptionHeader}" sortable="true" />
+	<display:column property="description" title="${descriptionHeader}" sortable="false" />
 
 	<spring:message code="trip.requirement" var="requirementHeader" />
 	<display:column property="requirement" title="${requirementHeader}"	sortable="false" />
 	
-	<spring:message code="trip.requirement" var="requirementHeader" />
-	<display:column property="requirement" title="${requirementHeader}"	sortable="false" />
+	<spring:message code="trip.publication" var="publicationHeader" />
+	<display:column property="publication" title="${publicationHeader}"	sortable="true" format="{0,date,dd/MM/yyyy HH:mm}" />
 	
-	<spring:message code="trip.requirement" var="requirementHeader" />
-	<display:column property="requirement" title="${requirementHeader}"	sortable="false" />
+	<spring:message code="trip.tripStart" var="tripStartHeader" />
+	<display:column property="tripStart" title="${tripStartHeader}"	sortable="true" format="{0,date,dd/MM/yyyy HH:mm}" />
 	
-	<spring:message code="trip.requirement" var="requirementHeader" />
-	<display:column property="requirement" title="${requirementHeader}"	sortable="false" />
+	<spring:message code="trip.tripEnd" var="tripEndHeader" />
+	<display:column property="tripEnd" title="${tripEndHeader}"	sortable="true" format="{0,date,dd/MM/yyyy HH:mm}" />
 	
-	<spring:message code="trip.requirement" var="requirementHeader" />
-	<display:column property="requirement" title="${requirementHeader}"	sortable="false" />
+	<spring:message code="trip.reason" var="reasonHeader" />
+	<display:column property="reason" title="${reasonHeader}"	sortable="true" />
 
-</display:table>
+	<spring:message code="trip.cancelled" var="cancelledHeader" />
+		<display:column property="cancelled" title="${cancelledHeader}"	sortable="true" />
+	</display:table>
 
 <!-- Action links -->
 
