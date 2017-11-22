@@ -30,18 +30,59 @@
 			</li>
 		</security:authorize>
 		
-		<security:authorize access="hasRole('CUSTOMER')">
-			<li><a class="fNiv"><spring:message	code="master.page.customer" /></a>
+		<security:authorize access="hasRole('MANAGER')">
+			<li><a class="fNiv"><spring:message	code="master.page.manager" /></a>
 				<ul>
 					<li class="arrow"></li>
-					<li><a href="customer/action-1.do"><spring:message code="master.page.customer.action.1" /></a></li>
-					<li><a href="customer/action-2.do"><spring:message code="master.page.customer.action.2" /></a></li>					
+					<li><a href=""><spring:message code="master.page.manager.create.trip" /></a></li>
+					<li><a href=""><spring:message code="master.page.manager.notes" /></a></li>
+					<li><a href=""><spring:message code="master.page.manager.applications" /></a></li>
+					<li><a href=""><spring:message code="master.page.manager.survivals" /></a></li>				
+				</ul>
+			</li>
+		</security:authorize>
+		
+		<security:authorize access="hasRole('EXPLORER')">
+			<li><a class="fNiv"><spring:message	code="master.page.explorer" /></a>
+				<ul>
+					<li class="arrow"></li>
+					<li><a href=""><spring:message code="master.page.explorer.create.application" /></a></li>				
+					<li><a href=""><spring:message code="master.page.explorer.applications" /></a></li>
+					<li><a href=""><spring:message code="master.page.explorer.survivals" /></a></li>
+				</ul>
+			</li>
+		</security:authorize>
+		
+		<security:authorize access="hasRole('AUDITOR')">
+			<li><a class="fNiv"><spring:message	code="master.page.auditor" /></a>
+				<ul>
+					<li class="arrow"></li>
+						<li><a href=""><spring:message code="master.page.auditor.audits" /></a></li>
+						<li><a href=""><spring:message code="master.page.auditor.notes" /></a></li>
+				</ul>
+			</li>
+		</security:authorize>
+		
+		<security:authorize access="hasRole('SPONSOR')">
+			<li><a class="fNiv"><spring:message	code="master.page.sponsor" /></a>
+				<ul>
+					<li class="arrow"></li>
+						<li><a href=""><spring:message code="master.page.sponsor.sponsorships" /></a></li>
 				</ul>
 			</li>
 		</security:authorize>
 		
 		<security:authorize access="isAnonymous()">
 			<li><a class="fNiv" href="security/login.do"><spring:message code="master.page.login" /></a></li>
+			<li><a class="fNiv" href=""><spring:message code="master.page.register" /></a>
+				<ul>
+					<li><a href=""><spring:message code="master.page.register.ranger" /></a>
+					<li><a href=""><spring:message code="master.page.register.explorer" /></a>
+				</ul>
+			</li>
+			<li><a class="fNiv" href=""><spring:message code="master.page.trips" /></a></li>
+			<li><a class="fNiv" href=""><spring:message code="master.page.categories" /></a></li>
+			<li><a class="fNiv" href=""><spring:message code="master.page.finder" /></a></li>
 		</security:authorize>
 		
 		<security:authorize access="isAuthenticated()">
@@ -50,14 +91,11 @@
 					<spring:message code="master.page.profile" /> 
 			        (<security:authentication property="principal.username" />)
 				</a>
-				<ul>
-					<li class="arrow"></li>
-					<li><a href="profile/action-1.do"><spring:message code="master.page.profile.action.1" /></a></li>
-					<li><a href="profile/action-2.do"><spring:message code="master.page.profile.action.2" /></a></li>
-					<li><a href="profile/action-3.do"><spring:message code="master.page.profile.action.3" /></a></li>					
-					<li><a href="j_spring_security_logout"><spring:message code="master.page.logout" /> </a></li>
-				</ul>
 			</li>
+			<li><a class="fNiv" href=""><spring:message code="master.page.logout" /></a></li>
+			<li><a class="fNiv" href=""><spring:message code="master.page.trips" /></a></li>
+			<li><a class="fNiv" href=""><spring:message code="master.page.categories" /></a></li>
+			<li><a class="fNiv" href=""><spring:message code="master.page.finder" /></a></li>
 		</security:authorize>
 	</ul>
 </div>
