@@ -22,23 +22,23 @@
 <!-- Listing grid -->
 
 <display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="trip" requestURI="${requestURI}" id="row">
+	name="survival" requestURI="${requestURI}" id="row">
 	
 	<!-- Attributes -->
 
-	<spring:message code="trip.ticker" var="tickerHeader" />
-	<display:column property="ticker" title="${tickerHeader}" sortable="true" >
-		<jstl:out value="${row.ticker}"/>
-	</display:column>
-
-	<spring:message code="trip.title" var="titleHeader" />
+	<spring:message code="survival.title" var="titleHeader" />
 	<display:column property="title" title="${titleHeader}" sortable="true" >
 		<jstl:out value="${row.title}"/>
 	</display:column>
 
-	<spring:message code="trip.description" var="descriptionHeader" />
+	<spring:message code="survival.description" var="descriptionHeader" />
 	<display:column property="description" title="${descriptionHeader}" sortable="false" >
 		<jstl:out value="${row.description}"/>
+	</display:column>
+
+	<spring:message code="survival.moment" var="momentHeader" />
+	<display:column property="moment" title="${momentHeader}" sortable="true" >
+		<jstl:out value="${row.moment}"/>
 	</display:column>
 
 	<spring:message code="trip.requirement" var="requirementHeader" />
