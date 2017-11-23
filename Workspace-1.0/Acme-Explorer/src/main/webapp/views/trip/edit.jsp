@@ -49,13 +49,6 @@
 	<form:errors cssClass="error" path="title" />
 	<br />
 	
-	<form:label path="title">
-		<spring:message code="trip.title" />:
-	</form:label>
-	<form:input path="title" />
-	<form:errors cssClass="error" path="title" />
-	<br />
-	
 	<form:label path="description">
 		<spring:message code="trip.description" />:
 	</form:label>
