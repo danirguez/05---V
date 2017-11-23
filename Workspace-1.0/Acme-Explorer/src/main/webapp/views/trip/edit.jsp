@@ -27,8 +27,13 @@
 	<form:hidden path="reason" />
 	<form:hidden path="cancelled" />
 	
-	<form:hidden path="id" />
-	<form:hidden path="version" />
+	<form:hidden path="ranger" />
+	<form:hidden path="manager" />
+	<form:hidden path="category" />
+	<form:hidden path="legalText" />
+	<form:hidden path="application" />
+	<form:hidden path="value" />
+	
 
 	<form:label path="ticker">
 		<spring:message code="trip.ticker" />:

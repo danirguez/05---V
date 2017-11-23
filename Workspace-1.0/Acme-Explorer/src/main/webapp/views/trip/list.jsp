@@ -22,7 +22,7 @@
 <!-- Listing grid -->
 
 <display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="announcements" requestURI="${requestURI}" id="row">
+	name="trip" requestURI="${requestURI}" id="row">
 	
 	<!-- Attributes -->
 
