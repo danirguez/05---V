@@ -1,5 +1,5 @@
 <%--
- * list.jsp
+ * navegate.jsp
  *
  * Copyright (C) 2017 Universidad de Sevilla
  * 
@@ -21,80 +21,14 @@
 
 <!-- Listing grid -->
 
-<security:authorize access="hasRole('EXPLORER')">
-<display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="applicationExplorer" requestURI="${requestURI}" id="row">
-	
-	<!-- Attributes -->
 
-	<spring:message code="application.status" var="statusHeader" />
-	<display:column property="status" title="${statusHeader}" sortable="true" >
-		<jstl:out value="${row.status}"/>
-	</display:column>
-
-	<spring:message code="application.comment" var="commentHeader" />
-	<display:column property="comment" title="${commentHeader}" sortable="true" >
-		<jstl:out value="${row.comment}"/>
-	</display:column>
-
-	<spring:message code="application.reason" var="reasonHeader" />
-	<display:column property="reason" title="${reasonHeader}" sortable="false" >
-		<jstl:out value="${row.reason}"/>
-	</display:column>
-
-	<spring:message code="application.creditcard" var="creditcardHeader" />
-	<display:column property="creditcard" title="${creditcardHeader}"	sortable="false" >
-		<jstl:out value="${row.creditcard}"/>
-	</display:column>
-	
-	<spring:message code="application.trip" var="tripHeader" />
-	<display:column property="trip" title="${tripHeader}"	sortable="true" >
-		<jstl:out value="${row.trip}"/>
-	</display:column>
-	
-</display:table>
-</security:authorize>
-
-<security:authorize access="hasRole('MANAGER')">
-<display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="applicationManager" requestURI="${requestURI}" id="row">
-	
-	<!-- Attributes -->
-
-	<spring:message code="application.status" var="statusHeader" />
-	<display:column property="status" title="${statusHeader}" sortable="true" >
-		<jstl:out value="${row.status}"/>
-	</display:column>
-
-	<spring:message code="application.comment" var="commentHeader" />
-	<display:column property="comment" title="${commentHeader}" sortable="true" >
-		<jstl:out value="${row.comment}"/>
-	</display:column>
-
-	<spring:message code="application.reason" var="reasonHeader" />
-	<display:column property="reason" title="${reasonHeader}" sortable="false" >
-		<jstl:out value="${row.reason}"/>
-	</display:column>
-
-	<spring:message code="application.creditcard" var="creditcardHeader" />
-	<display:column property="creditcard" title="${creditcardHeader}"	sortable="false" >
-		<jstl:out value="${row.creditcard}"/>
-	</display:column>
-	
-	<spring:message code="application.trip" var="tripHeader" />
-	<display:column property="trip" title="${tripHeader}"	sortable="true" >
-		<jstl:out value="${row.trip}"/>
-	</display:column>
-	
-</display:table>
-</security:authorize>
 
 <!-- Action links -->
 
-<security:authorize access="hasRole('EXPLORER')">
+<security:authorize access="hasRole('ADMIN')">
 	<div>
-		<a href="application/explorer/edit.do"> <spring:message
-				code="application.create" />
+		<a href="category/administrator/edit.do"> <spring:message
+				code="category.edit" />
 		</a>
 	</div>
 </security:authorize>
