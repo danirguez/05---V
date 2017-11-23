@@ -1,0 +1,24 @@
+		Requesito C:
+
+a -> Terminado
+b -> Terminado 
+c -> ¿Alfonso y Dani?
+d -> Alfonso
+e -> ¿Hay que hacerlo para todos los actores, o solo para actor general?
+f -> Alfonso
+g -> Dani
+h -> Dani
+
+
+		Requisito B:
+b -> Mario
+c -> Mario
+d -> Juanca
+e -> Juanca
+
+		Requisito A:
+
+b -> Inma
+c -> Inma
+d -> Alfonso
+e -> Alfonso
