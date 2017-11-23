@@ -22,8 +22,8 @@
 	</definition>
 	
 	<definition name="survival/register" extends="master.page">	
-		<put-attribute name="title" value="Create trip" />
-		<put-attribute name="body" value="/views/trip/edit.jsp" />
+		<put-attribute name="title" value="Register to attend a survival class" />
+		<put-attribute name="body" value="/views/survival/register.jsp" />
 	</definition>
 	
 </tiles-definitions>
