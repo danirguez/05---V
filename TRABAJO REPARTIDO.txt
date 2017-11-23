@@ -1,7 +1,7 @@
 		Requesito C:
 
-a -> Terminado
-b -> Terminado 
+a -> Terminado (Alfonso)
+b -> Terminado (Alfonso)
 c -> ¿Alfonso y Dani?
 d -> Alfonso
 e -> ¿Hay que hacerlo para todos los actores, o solo para actor general?
