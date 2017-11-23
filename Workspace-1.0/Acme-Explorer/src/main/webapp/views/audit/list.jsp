@@ -26,6 +26,22 @@
 	
 	<!-- Attributes -->
 	
+	<security:authorize access="hasRole('AUDITOR')">
+	
+	<spring:message code="audit.delete" var="deleteHeader" />
+	<display:column>
+		<a href= "audit/auditor/delete.do?auditId=${row.id}">
+		<spring:message code="audit.delete" var="deleteHeader" /></a>
+	</display:column>
+	
+	<spring:message code="audit.edit" var="editHeader" />
+	<display:column>
+		<a href= "audit/auditor/edit.do?auditId=${row.id}">
+		<spring:message code="audit.edit" var="editHeader" /></a>
+	</display:column>
+	
+	</security:authorize>
+	
 	<spring:message code="audit.moment" var="momentHeader" />
 	<display:column property="moment" title="${momentHeader}" sortable="true" >
 		<jstl:out value="${row.moment}"/>

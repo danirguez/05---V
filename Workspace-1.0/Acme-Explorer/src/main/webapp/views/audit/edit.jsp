@@ -54,14 +54,33 @@
 	<form:errors cssClass="error" path="attachment" />
 	<br />
 	
+	<form:label path="trip">
+		<spring:message code="audit.trip" />:
+	</form:label>
+	<form:select path="trip">
+		<jstl:forEach var="trip" items=${row.trip }>
+              <form:option value="${trip}">${trip.title}</form:option>
+		</jstl:forEach>
+	</form:select>
+	<form:input path="trip" />
+	<form:errors cssClass="error" path="trip" />
+	<br />
+
+
+	<input type="submit" name="save"
+		value="<spring:message code="audit.save" />" />&nbsp; 
+	<jstl:if test="${audit.id != 0}">
+		<input type="submit" name="delete"
+			value="<spring:message code="audit.delete" />"
+			onclick="return confirm('<spring:message code="audit.confirm.delete" />')" />&nbsp;
+	</jstl:if>
+	<input type="button" name="cancel"
+		value="<spring:message code="application.cancel" />"
+		onclick="javascript: relativeRedir('/');" />
+	<br />
 	
 
-
-
-
-
-
-
-
+	</security:authorize>
+</form:form>
 
 
