@@ -1,9 +1,9 @@
 		Requesito C:
 
-a -> Terminado
-b -> Terminado 
+a -> Terminado (Alfonso)
+b -> Terminado (Alfonso)
 c -> ¿Alfonso y Dani?
-d -> Alfonso
+d -> Terminado (Alfonso)
 e -> ¿Hay que hacerlo para todos los actores, o solo para actor general?
 f -> Alfonso
 g -> Dani
