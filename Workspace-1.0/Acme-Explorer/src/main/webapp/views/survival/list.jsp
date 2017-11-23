@@ -41,43 +41,34 @@
 		<jstl:out value="${row.moment}"/>
 	</display:column>
 
-	<spring:message code="trip.requirement" var="requirementHeader" />
-	<display:column property="requirement" title="${requirementHeader}"	sortable="false" >
-		<jstl:out value="${row.requirement}"/>
+	<spring:message code="survival.location" var="locationHeader" />
+	<display:column property="location" title="${locationHeader}"	sortable="true" >
+		<jstl:out value="${row.location}"/>
 	</display:column>
 	
-	<spring:message code="trip.publication" var="publicationHeader" />
-	<display:column property="publication" title="${publicationHeader}"	sortable="true" >
-		<jstl:out value="${row.publication}"/>
+	<spring:message code="survival.manager" var="managerHeader" />
+	<display:column property="manager" title="${managerHeader}"	sortable="true" >
+		<jstl:out value="${row.manager}"/>
 	</display:column>
 	
-	<spring:message code="trip.tripStart" var="tripStartHeader" />
-	<display:column property="tripStart" title="${tripStartHeader}"	sortable="true" >
-		<jstl:out value="${row.tripStart}"/>
+	<spring:message code="survival.trip" var="tripHeader" />
+	<display:column property="trip" title="${tripHeader}"	sortable="true" >
+		<jstl:out value="${row.trip}"/>
 	</display:column>
 	
-	<spring:message code="trip.tripEnd" var="tripEndHeader" />
-	<display:column property="tripEnd" title="${tripEndHeader}"	sortable="true" >
-		<jstl:out value="${row.tripEnd}"/>
+	<spring:message code="survival.explorer" var="explorerHeader" />
+	<display:column property="explorer" title="${explorerHeader}"	sortable="true" >
+		<jstl:out value="${row.explorer}"/>
 	</display:column>
 	
-	<spring:message code="trip.reason" var="reasonHeader" />
-	<display:column property="reason" title="${reasonHeader}"	sortable="true" >
-		<jstl:out value="${row.reason}"/>
-	</display:column>
-
-	<spring:message code="trip.cancelled" var="cancelledHeader" />
-	<display:column property="cancelled" title="${cancelledHeader}"	sortable="true" >
-		<jstl:out value="${row.cancelled}"/>
-	</display:column>
 </display:table>
 
 <!-- Action links -->
 
-<security:authorize access="hasRole('MANAGER')">
+<security:authorize access="hasRole('EXPLORER')">
 	<div>
-		<a href="trip/manager/edit.do"> <spring:message
-				code="trip.create" />
+		<a href="survival/explorer/register.do"> <spring:message
+				code="survival.register" />
 		</a>
 	</div>
 </security:authorize>
