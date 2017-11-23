@@ -16,90 +16,71 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
-<form:form action="trip/edit.do" modelAttribute="trip">
+<form:form action="application/explorer/edit.do" modelAttribute="application">
 
 	<security:authorize access="hasRole('EXPLORER')">
 
-	<form:hidden path="id" />
-	<form:hidden path="version" />
-	
-	<form:hidden path="publication" />
-	<form:hidden path="reason" />
-	<form:hidden path="cancelled" />
-	
-	<form:hidden path="ranger" />
 	<form:hidden path="manager" />
-	<form:hidden path="category" />
-	<form:hidden path="legalText" />
-	<form:hidden path="application" />
-	<form:hidden path="value" />
-	
 
-	<form:label path="ticker">
-		<spring:message code="trip.ticker" />:
+	<form:label path="status">
+		<spring:message code="application.status" />:
 	</form:label>
-	<form:input path="ticker" />
-	<form:errors cssClass="error" path="ticker" />
+	<form:select path="status">
+              <form:option value="PENDING"/>
+              <form:option value="REJECTED"/>
+              <form:option value="DUE"/>
+              <form:option value="ACCEPTED"/>
+              <form:option value="CANCELLED"/>
+    </form:select>
 	<br />
 	
-	<form:label path="title">
-		<spring:message code="trip.title" />:
+	<form:label path="comment">
+		<spring:message code="application.comment" />:
 	</form:label>
-	<form:input path="title" />
-	<form:errors cssClass="error" path="title" />
+	<form:input path="comment" />
+	<form:errors cssClass="error" path="comment" />
 	<br />
 	
-	<form:label path="title">
-		<spring:message code="trip.title" />:
+	<form:label path="reason">
+		<spring:message code="application.reason" />:
 	</form:label>
-	<form:input path="title" />
-	<form:errors cssClass="error" path="title" />
+	<form:input path="reason" />
+	<form:errors cssClass="error" path="reason" />
 	<br />
 	
-	<form:label path="description">
-		<spring:message code="trip.description" />:
+	<form:label path="creditcard">
+		<spring:message code="application.creditcard" />:
 	</form:label>
-	<form:input path="description" />
-	<form:errors cssClass="error" path="description" />
+	<form:select path="creditcard">
+		<jstl:forEach var="creditcard" items=${row.creditcard }>
+              <form:option value="${creditcard}">${creditcard.number}</form:option>
+		</jstl:forEach>
+	</form:select>
+	<form:input path="creditcard" />
+	<form:errors cssClass="error" path="creditcard" />
 	<br />
 	
-	<form:label path="price">
-		<spring:message code="trip.price" />:
+	<form:label path="trip">
+		<spring:message code="application.trip" />:
 	</form:label>
-	<form:input path="price" />
-	<form:errors cssClass="error" path="price" />
+	<form:select path="trip">
+		<jstl:forEach var="trip" items=${row.trip }>
+              <form:option value="${trip}">${trip.title}</form:option>
+		</jstl:forEach>
+	</form:select>
+	<form:input path="trip" />
+	<form:errors cssClass="error" path="trip" />
 	<br />
 	
-	<form:label path="requirement">
-		<spring:message code="trip.requirement" />:
-	</form:label>
-	<form:input path="requirement" />
-	<form:errors cssClass="error" path="requirement" />
-	<br />
-	
-	<form:label path="tripStart">
-		<spring:message code="trip.tripStart" />:
-	</form:label>
-	<form:input path="tripStart" />
-	<form:errors cssClass="error" path="tripStart" />
-	<br />
-	
-	<form:label path="tripEnd">
-		<spring:message code="trip.tripEnd" />:
-	</form:label>
-	<form:input path="tripEnd" />
-	<form:errors cssClass="error" path="tripEnd" />
-	<br />
-
 	<input type="submit" name="save"
-		value="<spring:message code="ranger.save" />" />&nbsp; 
-	<jstl:if test="${ranger.id != 0}">
+		value="<spring:message code="application.save" />" />&nbsp; 
+	<jstl:if test="${application.id != 0}">
 		<input type="submit" name="delete"
-			value="<spring:message code="ranger.delete" />"
-			onclick="return confirm('<spring:message code="ranger.confirm.delete" />')" />&nbsp;
+			value="<spring:message code="application.delete" />"
+			onclick="return confirm('<spring:message code="application.confirm.delete" />')" />&nbsp;
 	</jstl:if>
 	<input type="button" name="cancel"
-		value="<spring:message code="ranger.cancel" />"
+		value="<spring:message code="application.cancel" />"
 		onclick="javascript: relativeRedir('/');" />
 	<br />
 	</security:authorize>
