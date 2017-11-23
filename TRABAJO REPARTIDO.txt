@@ -5,7 +5,7 @@ b -> Terminado (Alfonso)
 c -> ¿Alfonso y Dani?
 d -> Terminado (Alfonso)
 e -> ¿Hay que hacerlo para todos los actores, o solo para actor general?
-f -> Alfonso
+f -> Terminado (Alfonso) "Hay que mirar la parte de Stage dentro del create"
 g -> Dani
 h -> Dani
 
