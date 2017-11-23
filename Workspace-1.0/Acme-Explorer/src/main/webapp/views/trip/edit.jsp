@@ -16,9 +16,9 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
-<form:form action="trip/edit.do" modelAttribute="trip">
+<form:form action="trip/manager/edit.do" modelAttribute="trip">
 
-	<security:authorize access="hasRole('EXPLORER')">
+	<security:authorize access="hasRole('MANAGER')">
 
 	<form:hidden path="id" />
 	<form:hidden path="version" />
@@ -85,14 +85,14 @@
 	<br />
 
 	<input type="submit" name="save"
-		value="<spring:message code="ranger.save" />" />&nbsp; 
-	<jstl:if test="${ranger.id != 0}">
+		value="<spring:message code="trip.save" />" />&nbsp; 
+	<jstl:if test="${trip.id != 0}">
 		<input type="submit" name="delete"
-			value="<spring:message code="ranger.delete" />"
-			onclick="return confirm('<spring:message code="ranger.confirm.delete" />')" />&nbsp;
+			value="<spring:message code="trip.delete" />"
+			onclick="return confirm('<spring:message code="trip.confirm.delete" />')" />&nbsp;
 	</jstl:if>
 	<input type="button" name="cancel"
-		value="<spring:message code="ranger.cancel" />"
+		value="<spring:message code="trip.cancel" />"
 		onclick="javascript: relativeRedir('/');" />
 	<br />
 	</security:authorize>
