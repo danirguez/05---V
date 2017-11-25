@@ -13,8 +13,8 @@ h -> Terminado (Dani)
 		Requisito B:
 b -> Mario
 c -> Mario
-d -> Juanca
-e -> Juanca
+d -> Terminado(Juanca)
+e -> Terminado(Juanca)
 
 		Requisito A:
 
