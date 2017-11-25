@@ -19,10 +19,16 @@
 <%@taglib prefix="security"	uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
-<!-- Listing grid -->
 
+<security:authorize access="hasRole('AUDITOR')">
 <display:table pagesize="5" class="displaytag" keepStatus="true"
 	name="announcements" requestURI="${requestURI}" id="row">
+	
+	<spring:message code="note.edit" var="editHeader" />
+	<display:column>
+		<a href= "note/auditor/edit.do?auditId=${row.id}">
+		<spring:message code="note.edit" var="editHeader" /></a>
+	</display:column>
 	
 	<spring:message code="note.moment" var="momentHeader" />
 	<display:column property="moment" title="${momentHeader}" sortable="true" >
@@ -50,22 +56,48 @@
 	</display:column>
 
 </display:table>
-
-	
-<!-- Action links -->
-
-<security:authorize access="hasRole('MANAGER')">
-	<div>
-		<a href="note/manager/edit.do"> <spring:message
-				code="note.create" />
-		</a>
-	</div>
 </security:authorize>
 
-<security:authorize access="hasRole('AUDITOR')">
-	<div>
-		<a href="note/auditor/edit.do"> <spring:message
-				code="note.create" />
-		</a>
-	</div>
+
+<security:authorize access="hasRole('MANAGER')">
+<display:table pagesize="5" class="displaytag" keepStatus="true"
+	name="announcements" requestURI="${requestURI}" id="row">
+	
+	<spring:message code="note.edit" var="editHeader" />
+	<display:column>
+		<a href= "note/auditor/edit.do?auditId=${row.id}">
+		<spring:message code="note.edit" var="editHeader" /></a>
+	</display:column>
+	
+	<spring:message code="note.moment" var="momentHeader" />
+	<display:column property="moment" title="${momentHeader}" sortable="true" >
+		<jstl:out value="${row.moment}"/>
+	</display:column>
+
+	<spring:message code="note.remark" var="remarkHeader" />
+	<display:column property="remark" title="${remarkHeader}" sortable="true" >
+		<jstl:out value="${row.remark}"/>
+	</display:column>
+
+	<spring:message code="note.reply" var="replyHeader" />
+	<display:column property="reply" title="${replyHeader}" sortable="false" >
+		<jstl:out value="${row.reply}"/>
+	</display:column>
+
+	<spring:message code="note.momentReply" var="momentReplyHeader" />
+	<display:column property="momentReply" title="${momentReplyHeader}"	sortable="false" >
+		<jstl:out value="${row.momentReply}"/>
+	</display:column>
+	
+	<spring:message code="note.trip" var="tripHeader" />
+	<display:column property="trip" title="${tripHeader}"	sortable="true" >
+		<jstl:out value="${row.trip}"/>
+	</display:column>
+	
+	<spring:message code="note.auditor" var="auditorHeader" />
+	<display:column property="auditor" title="${auditorHeader}"	sortable="true" >
+		<jstl:out value="${row.auditor}"/>
+	</display:column>
+
+</display:table>
 </security:authorize>
