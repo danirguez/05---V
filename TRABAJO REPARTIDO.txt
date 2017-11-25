@@ -18,7 +18,7 @@ e -> Juanca
 
 		Requisito A:
 
-b -> Inma
-c -> Inma
+b -> Terminado (Inma)
+c -> Terminado (Inma)
 d -> Terminado (Alfonso)
 e -> Terminado (Alfonso)
