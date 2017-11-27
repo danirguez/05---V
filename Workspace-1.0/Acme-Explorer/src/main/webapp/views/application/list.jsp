@@ -28,29 +28,19 @@
 	<!-- Attributes -->
 
 	<spring:message code="application.status" var="statusHeader" />
-	<display:column property="status" title="${statusHeader}" sortable="true" >
-		<jstl:out value="${row.status}"/>
-	</display:column>
+	<display:column property="status" title="${statusHeader}" sortable="true" />
 
 	<spring:message code="application.comment" var="commentHeader" />
-	<display:column property="comment" title="${commentHeader}" sortable="true" >
-		<jstl:out value="${row.comment}"/>
-	</display:column>
+	<display:column property="comment" title="${commentHeader}" sortable="true" />
 
 	<spring:message code="application.reason" var="reasonHeader" />
-	<display:column property="reason" title="${reasonHeader}" sortable="false" >
-		<jstl:out value="${row.reason}"/>
-	</display:column>
+	<display:column property="reason" title="${reasonHeader}" sortable="false" />
 
 	<spring:message code="application.creditcard" var="creditcardHeader" />
-	<display:column property="creditcard" title="${creditcardHeader}"	sortable="false" >
-		<jstl:out value="${row.creditcard}"/>
-	</display:column>
+	<display:column property="creditcard" title="${creditcardHeader}"	sortable="false" />
 	
 	<spring:message code="application.trip" var="tripHeader" />
-	<display:column property="trip" title="${tripHeader}"	sortable="true" >
-		<jstl:out value="${row.trip}"/>
-	</display:column>
+	<display:column property="trip" title="${tripHeader}"	sortable="true" />
 	
 </display:table>
 </security:authorize>
@@ -62,29 +52,19 @@
 	<!-- Attributes -->
 
 	<spring:message code="application.status" var="statusHeader" />
-	<display:column property="status" title="${statusHeader}" sortable="true" >
-		<jstl:out value="${row.status}"/>
-	</display:column>
+	<display:column property="status" title="${statusHeader}" sortable="true" />
 
 	<spring:message code="application.comment" var="commentHeader" />
-	<display:column property="comment" title="${commentHeader}" sortable="true" >
-		<jstl:out value="${row.comment}"/>
-	</display:column>
+	<display:column property="comment" title="${commentHeader}" sortable="true" />
 
 	<spring:message code="application.reason" var="reasonHeader" />
-	<display:column property="reason" title="${reasonHeader}" sortable="false" >
-		<jstl:out value="${row.reason}"/>
-	</display:column>
+	<display:column property="reason" title="${reasonHeader}" sortable="false" />
 
 	<spring:message code="application.creditcard" var="creditcardHeader" />
-	<display:column property="creditcard" title="${creditcardHeader}"	sortable="false" >
-		<jstl:out value="${row.creditcard}"/>
-	</display:column>
+	<display:column property="creditcard" title="${creditcardHeader}"	sortable="false" />
 	
 	<spring:message code="application.trip" var="tripHeader" />
-	<display:column property="trip" title="${tripHeader}"	sortable="true" >
-		<jstl:out value="${row.trip}"/>
-	</display:column>
+	<display:column property="trip" title="${tripHeader}"	sortable="true" />
 	
 </display:table>
 </security:authorize>

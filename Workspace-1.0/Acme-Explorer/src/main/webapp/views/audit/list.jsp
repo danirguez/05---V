@@ -43,50 +43,24 @@
 	</security:authorize>
 	
 	<spring:message code="audit.moment" var="momentHeader" />
-	<display:column property="moment" title="${momentHeader}" sortable="true" >
-		<jstl:out value="${row.moment}"/>
-	</display:column>
+	<display:column property="moment" title="${momentHeader}" sortable="true" />
 	
 	<spring:message code="audit.title" var="titleHeader" />
-	<display:column property="title" title="${titleHeader}" sortable="true" >
-		<jstl:out value="${row.title}"/>
-	</display:column>
+	<display:column property="title" title="${titleHeader}" sortable="true" />
 	
 	<spring:message code="audit.description" var="descriptionHeader" />
-	<display:column property="description" title="${descriptionHeader}" sortable="false" >
-		<jstl:out value="${row.description}"/>
-	</display:column>
+	<display:column property="description" title="${descriptionHeader}" sortable="false" />
 	
 	<spring:message code="audit.attachment" var="attachmentHeader" />
-	<display:column property="attachment" title="${attachmentHeader}" sortable="false" >
-		<jstl:out value="${row.attachment}"/>
-	</display:column>
+	<display:column property="attachment" title="${attachmentHeader}" sortable="false" />
 	
 	<spring:message code="audit.draftMode" var="draftModeHeader" />
-	<display:column property="draftMode" title="${draftModeHeader}" sortable="true" >
-		<jstl:out value="${row.draftMode}"/>
-	</display:column>
+	<display:column property="draftMode" title="${draftModeHeader}" sortable="true" />
 	
 	<spring:message code="audit.trip" var="tripHeader" />
-	<display:column property="trip" title="${tripHeader}" sortable="true" >
-		<jstl:out value="${row.trip}"/>
-	</display:column>
+	<display:column property="trip" title="${tripHeader}" sortable="true" />
 	
 	<spring:message code="audit.auditor" var="auditorHeader" />
-	<display:column property="auditor" title="${auditorHeader}" sortable="true" >
-		<jstl:out value="${row.auditor}"/>
-	</display:column>
+	<display:column property="auditor" title="${auditorHeader}" sortable="true" />
 	
 </display:table>
-	
-	 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

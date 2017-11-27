@@ -21,54 +21,38 @@
 
 <!-- Listing grid -->
 
+<security:authorize access="hasRole('MANAGER')">
 <display:table pagesize="5" class="displaytag" keepStatus="true"
 	name="survival" requestURI="${requestURI}" id="row">
 	
 	<!-- Attributes -->
-
 	<spring:message code="survival.title" var="titleHeader" />
-	<display:column property="title" title="${titleHeader}" sortable="true" >
-		<jstl:out value="${row.title}"/>
-	</display:column>
+	<display:column property="title" title="${titleHeader}" sortable="true" />
 
 	<spring:message code="survival.description" var="descriptionHeader" />
-	<display:column property="description" title="${descriptionHeader}" sortable="false" >
-		<jstl:out value="${row.description}"/>
-	</display:column>
+	<display:column property="description" title="${descriptionHeader}" sortable="false" />
 
 	<spring:message code="survival.moment" var="momentHeader" />
-	<display:column property="moment" title="${momentHeader}" sortable="true" >
-		<jstl:out value="${row.moment}"/>
-	</display:column>
+	<display:column property="moment" title="${momentHeader}" sortable="true" />
 
 	<spring:message code="survival.location" var="locationHeader" />
-	<display:column property="location" title="${locationHeader}"	sortable="true" >
-		<jstl:out value="${row.location}"/>
-	</display:column>
+	<display:column property="location" title="${locationHeader}"	sortable="true" />
 	
 	<spring:message code="survival.manager" var="managerHeader" />
-	<display:column property="manager" title="${managerHeader}"	sortable="true" >
-		<jstl:out value="${row.manager}"/>
-	</display:column>
+	<display:column property="manager" title="${managerHeader}"	sortable="true" />
 	
 	<spring:message code="survival.trip" var="tripHeader" />
-	<display:column property="trip" title="${tripHeader}"	sortable="true" >
-		<jstl:out value="${row.trip}"/>
-	</display:column>
+	<display:column property="trip" title="${tripHeader}"	sortable="true" />
 	
 	<spring:message code="survival.explorer" var="explorerHeader" />
-	<display:column property="explorer" title="${explorerHeader}"	sortable="true" >
-		<jstl:out value="${row.explorer}"/>
-	</display:column>
-	
+	<display:column property="explorer" title="${explorerHeader}"	sortable="true" />
 </display:table>
 
 <!-- Action links -->
 
-<security:authorize access="hasRole('EXPLORER')">
 	<div>
-		<a href="survival/explorer/register.do"> <spring:message
-				code="survival.register" />
+		<a href="survival/manager/edit.do"> <spring:message
+				code="survival.create" />
 		</a>
 	</div>
 </security:authorize>
