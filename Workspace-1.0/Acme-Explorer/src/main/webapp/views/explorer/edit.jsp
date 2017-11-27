@@ -82,12 +82,8 @@
 	<br />
 
 	<input type="submit" name="save"
-		value="<spring:message code="explorer.save" />" />&nbsp; 
-	<jstl:if test="${explorer.id != 0}">
-		<input type="submit" name="delete"
-			value="<spring:message code="explorer.delete" />"
-			onclick="return confirm('<spring:message code="explorer.confirm.delete" />')" />&nbsp;
-	</jstl:if>
+		value="<spring:message code="explorer.save" />" />&nbsp;
+		
 	<input type="button" name="cancel"
 		value="<spring:message code="explorer.cancel" />"
 		onclick="javascript: relativeRedir('/');" />
