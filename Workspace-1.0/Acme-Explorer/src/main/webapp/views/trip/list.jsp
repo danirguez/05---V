@@ -27,49 +27,28 @@
 	<!-- Attributes -->
 
 	<spring:message code="trip.ticker" var="tickerHeader" />
-	<display:column property="ticker" title="${tickerHeader}" sortable="true" >
-		<jstl:out value="${row.ticker}"/>
-	</display:column>
+	<display:column property="ticker" title="${tickerHeader}" sortable="true" />
 
 	<spring:message code="trip.title" var="titleHeader" />
-	<display:column property="title" title="${titleHeader}" sortable="true" >
-		<jstl:out value="${row.title}"/>
-	</display:column>
-
-	<spring:message code="trip.description" var="descriptionHeader" />
-	<display:column property="description" title="${descriptionHeader}" sortable="false" >
-		<jstl:out value="${row.description}"/>
-	</display:column>
-
-	<spring:message code="trip.requirement" var="requirementHeader" />
-	<display:column property="requirement" title="${requirementHeader}"	sortable="false" >
-		<jstl:out value="${row.requirement}"/>
-	</display:column>
+	<display:column property="title" title="${titleHeader}" sortable="true" />
+	
+	<spring:message code="trip.price" var="priceHeader" />
+	<display:column property="price" title="${priceHeader}" sortable="true" />
 	
 	<spring:message code="trip.publication" var="publicationHeader" />
-	<display:column property="publication" title="${publicationHeader}"	sortable="true" >
-		<jstl:out value="${row.publication}"/>
-	</display:column>
+	<display:column property="publication" title="${publicationHeader}"	sortable="true" />
 	
 	<spring:message code="trip.tripStart" var="tripStartHeader" />
-	<display:column property="tripStart" title="${tripStartHeader}"	sortable="true" >
-		<jstl:out value="${row.tripStart}"/>
-	</display:column>
+	<display:column property="tripStart" title="${tripStartHeader}"	sortable="true" />
 	
 	<spring:message code="trip.tripEnd" var="tripEndHeader" />
-	<display:column property="tripEnd" title="${tripEndHeader}"	sortable="true" >
-		<jstl:out value="${row.tripEnd}"/>
-	</display:column>
-	
-	<spring:message code="trip.reason" var="reasonHeader" />
-	<display:column property="reason" title="${reasonHeader}"	sortable="true" >
-		<jstl:out value="${row.reason}"/>
-	</display:column>
+	<display:column property="tripEnd" title="${tripEndHeader}"	sortable="true" />
 
 	<spring:message code="trip.cancelled" var="cancelledHeader" />
-	<display:column property="cancelled" title="${cancelledHeader}"	sortable="true" >
-		<jstl:out value="${row.cancelled}"/>
-	</display:column>
+	<display:column property="cancelled" title="${cancelledHeader}"	sortable="false" />
+	
+	<spring:message code="trip.category" var="categoryHeader" />
+	<display:column property="category" title="${categoryHeader}"	sortable="true" />
 </display:table>
 
 <!-- Action links -->

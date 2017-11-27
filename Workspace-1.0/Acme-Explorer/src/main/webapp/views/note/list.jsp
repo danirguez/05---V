@@ -41,29 +41,19 @@
 	</security:authorize>
 	
 	<spring:message code="note.moment" var="momentHeader" />
-	<display:column property="moment" title="${momentHeader}" sortable="true" >
-		<jstl:out value="${row.moment}"/>
-	</display:column>
+	<display:column property="moment" title="${momentHeader}" sortable="true" />
 
 	<spring:message code="note.remark" var="remarkHeader" />
-	<display:column property="remark" title="${remarkHeader}" sortable="true" >
-		<jstl:out value="${row.remark}"/>
-	</display:column>
+	<display:column property="remark" title="${remarkHeader}" sortable="true" />
 
 	<spring:message code="note.reply" var="replyHeader" />
-	<display:column property="reply" title="${replyHeader}" sortable="false" >
-		<jstl:out value="${row.reply}"/>
-	</display:column>
+	<display:column property="reply" title="${replyHeader}" sortable="false" />
 
 	<spring:message code="note.momentReply" var="momentReplyHeader" />
-	<display:column property="momentReply" title="${momentReplyHeader}"	sortable="false" >
-		<jstl:out value="${row.momentReply}"/>
-	</display:column>
+	<display:column property="momentReply" title="${momentReplyHeader}"	sortable="false" />
 	
 	<spring:message code="note.trip" var="tripHeader" />
-	<display:column property="trip" title="${tripHeader}"	sortable="true" >
-		<jstl:out value="${row.trip}"/>
-	</display:column>
+	<display:column property="trip" title="${tripHeader}"	sortable="true" />
 
 </display:table>
 </security:authorize>

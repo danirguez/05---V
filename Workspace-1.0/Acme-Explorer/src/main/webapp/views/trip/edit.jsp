@@ -23,6 +23,7 @@
 	<form:hidden path="id" />
 	<form:hidden path="version" />
 	
+	<form:hidden path="ticker"/>
 	<form:hidden path="publication" />
 	<form:hidden path="reason" />
 	<form:hidden path="cancelled" />
@@ -34,13 +35,6 @@
 	<form:hidden path="application" />
 	<form:hidden path="value" />
 	
-
-	<form:label path="ticker">
-		<spring:message code="trip.ticker" />:
-	</form:label>
-	<form:input path="ticker" />
-	<form:errors cssClass="error" path="ticker" />
-	<br />
 	
 	<form:label path="title">
 		<spring:message code="trip.title" />:
@@ -94,6 +88,18 @@
 	</form:select>
 	<form:input path="stage" />
 	<form:errors cssClass="error" path="stage" />
+	<br />
+	
+	<form:label path="category">
+		<spring:message code="trip.category" />:
+	</form:label>
+	<form:select path="category">
+		<jstl:forEach var="category" items=${row.category }>
+              <form:option value="${category}"/>
+		</jstl:forEach>
+	</form:select>
+	<form:input path="category" />
+	<form:errors cssClass="error" path="category" />
 	<br />
 
 	<input type="submit" name="save"

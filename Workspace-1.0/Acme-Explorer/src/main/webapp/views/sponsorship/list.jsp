@@ -43,29 +43,19 @@
 	</security:authorize>
 	
 	<spring:message code="sponsorship.banner" var="bannerHeader" />
-	<display:column property="banner" title="${bannerHeader}" sortable="true" >
-		<jstl:out value="${row.banner}"/>
-	</display:column>
+	<display:column property="banner" title="${bannerHeader}" sortable="true" />
 	
 	<spring:message code="sponsorship.infoPage" var="infoPageHeader" />
-	<display:column property="infoPage" title="${infoPageHeader}" sortable="true" >
-		<jstl:out value="${row.infoPage}"/>
-	</display:column>
+	<display:column property="infoPage" title="${infoPageHeader}" sortable="true" />
 	
 	<spring:message code="sponsorship.creditCard" var="creditCardHeader" />
-	<display:column property="creditCard" title="${creditCardHeader}" sortable="false" >
-		<jstl:out value="${row.creditCard}"/>
-	</display:column>
+	<display:column property="creditCard" title="${creditCardHeader}" sortable="false" />
 	
 	<spring:message code="sponsorship.sponsor" var="sponsorHeader" />
-	<display:column property="sponsor" title="${sponsorHeader}" sortable="true" >
-		<jstl:out value="${row.sponsor}"/>
-	</display:column>
+	<display:column property="sponsor" title="${sponsorHeader}" sortable="true" />
 	
 	<spring:message code="sponsorship.trip" var="tripHeader" />
-	<display:column property="trip" title="${tripHeader}" sortable="true" >
-		<jstl:out value="${row.trip}"/>
-	</display:column>
+	<display:column property="trip" title="${tripHeader}" sortable="true" />
 	
 </display:table>
 	

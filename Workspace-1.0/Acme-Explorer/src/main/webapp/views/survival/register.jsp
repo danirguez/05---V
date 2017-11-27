@@ -16,9 +16,8 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
-<form:form action="survival/register.do" modelAttribute="survival">
-
-	<security:authorize access="hasRole('EXPLORER')">
+<security:authorize access="hasRole('EXPLORER')">
+<form:form action="survival/register.do" modelAttribute="survival">	
 
 	<form:hidden path="id" />
 	<form:hidden path="version" />
@@ -44,5 +43,14 @@
 	<form:errors cssClass="error" path="survival" />
 	<br />
 	
-	</security:authorize>
+	<input type="submit" name="save"
+		value="<spring:message code="survival.save" />" />&nbsp; 
+		
+		
+	<input type="button" name="cancel"
+		value="<spring:message code="survival.cancel" />"
+		onclick="javascript: relativeRedir('/');" />
+	<br />
+	
 </form:form>
+</security:authorize>
