@@ -71,6 +71,6 @@
 	
 	<input type="button" name="cancel"
 		value="<spring:message code="finder.cancel" />"
-		onclick="javascript: relativeRedir('finder/unauthenticated/search.do');" />
+		onclick="javascript: relativeRedir('finder/search.do');" />
 	<br />
 </form:form>
