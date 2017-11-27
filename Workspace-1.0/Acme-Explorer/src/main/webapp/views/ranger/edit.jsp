@@ -82,11 +82,7 @@
 
 	<input type="submit" name="save"
 		value="<spring:message code="ranger.save" />" />&nbsp; 
-	<jstl:if test="${ranger.id != 0}">
-		<input type="submit" name="delete"
-			value="<spring:message code="ranger.delete" />"
-			onclick="return confirm('<spring:message code="ranger.confirm.delete" />')" />&nbsp;
-	</jstl:if>
+
 	<input type="button" name="cancel"
 		value="<spring:message code="ranger.cancel" />"
 		onclick="javascript: relativeRedir('/');" />
