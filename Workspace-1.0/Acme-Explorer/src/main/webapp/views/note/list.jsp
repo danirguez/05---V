@@ -20,54 +20,25 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
 
-<security:authorize access="hasRole('AUDITOR')">
+<security:authorize access="hasRole('AUDITOR') or hasRole('MANAGER')">
 <display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="announcements" requestURI="${requestURI}" id="row">
+	name="note" requestURI="${requestURI}" id="row">
 	
+	<security:authorize access="hasRole('AUDITOR')">
 	<spring:message code="note.edit" var="editHeader" />
 	<display:column>
 		<a href= "note/auditor/edit.do?auditId=${row.id}">
 		<spring:message code="note.edit" var="editHeader" /></a>
 	</display:column>
+	</security:authorize>
 	
-	<spring:message code="note.moment" var="momentHeader" />
-	<display:column property="moment" title="${momentHeader}" sortable="true" >
-		<jstl:out value="${row.moment}"/>
-	</display:column>
-
-	<spring:message code="note.remark" var="remarkHeader" />
-	<display:column property="remark" title="${remarkHeader}" sortable="true" >
-		<jstl:out value="${row.remark}"/>
-	</display:column>
-
-	<spring:message code="note.reply" var="replyHeader" />
-	<display:column property="reply" title="${replyHeader}" sortable="false" >
-		<jstl:out value="${row.reply}"/>
-	</display:column>
-
-	<spring:message code="note.momentReply" var="momentReplyHeader" />
-	<display:column property="momentReply" title="${momentReplyHeader}"	sortable="false" >
-		<jstl:out value="${row.momentReply}"/>
-	</display:column>
-	
-	<spring:message code="note.trip" var="tripHeader" />
-	<display:column property="trip" title="${tripHeader}"	sortable="true" >
-		<jstl:out value="${row.trip}"/>
-	</display:column>
-
-</display:table>
-</security:authorize>
-
-
-<security:authorize access="hasRole('MANAGER')">
-<display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="announcements" requestURI="${requestURI}" id="row">
-	
+	<security:authorize access="hasRole('MANAGER')">
 	<spring:message code="note.addReply" var="addHeader" />
 	<display:column>
 		<a href= "note/manager/create.do">
 		<spring:message code="note.addReply" var="addHeader" /></a>
 	</display:column>
+	</security:authorize>
 	
 	<spring:message code="note.moment" var="momentHeader" />
 	<display:column property="moment" title="${momentHeader}" sortable="true" >
@@ -92,11 +63,6 @@
 	<spring:message code="note.trip" var="tripHeader" />
 	<display:column property="trip" title="${tripHeader}"	sortable="true" >
 		<jstl:out value="${row.trip}"/>
-	</display:column>
-	
-	<spring:message code="note.auditor" var="auditorHeader" />
-	<display:column property="auditor" title="${auditorHeader}"	sortable="true" >
-		<jstl:out value="${row.auditor}"/>
 	</display:column>
 
 </display:table>
