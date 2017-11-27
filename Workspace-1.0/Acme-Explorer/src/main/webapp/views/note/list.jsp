@@ -63,10 +63,10 @@
 <display:table pagesize="5" class="displaytag" keepStatus="true"
 	name="announcements" requestURI="${requestURI}" id="row">
 	
-	<spring:message code="note.edit" var="editHeader" />
+	<spring:message code="note.addReply" var="addHeader" />
 	<display:column>
-		<a href= "note/auditor/edit.do?auditId=${row.id}">
-		<spring:message code="note.edit" var="editHeader" /></a>
+		<a href= "note/manager/create.do">
+		<spring:message code="note.addReply" var="addHeader" /></a>
 	</display:column>
 	
 	<spring:message code="note.moment" var="momentHeader" />
