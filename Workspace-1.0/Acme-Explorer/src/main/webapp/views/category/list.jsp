@@ -31,7 +31,7 @@
 	
 	<display:column>
 		<jstl:forEach var="category" items="${category.getCategories()}">
-		<a href="category/manager/navigate.do?categoryId=${category.id}">
+		<a href="">
 		<jstl:out value="${category.getName()}"/>
 		</a>
 		</jstl:forEach>
