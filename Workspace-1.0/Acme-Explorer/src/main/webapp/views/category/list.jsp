@@ -23,7 +23,7 @@
 <jstl:if test="!category.getCategories().isEmpty()">
 
 <display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="categories" requestURI="${requestURI}" id="row">
+	name="categories" requestURI="category/list.do" id="row">
 	
 	<!-- Attributes -->
 	
@@ -31,7 +31,7 @@
 	
 	<display:column>
 		<jstl:forEach var="category" items="${category.getCategories()}">
-		<a href="">
+		<a href="trip/list.do?categoryId=*">
 		<jstl:out value="${category.getName()}"/>
 		</a>
 		</jstl:forEach>
@@ -39,3 +39,13 @@
 	
 </display:table>
 </jstl:if>
+
+<!-- Action links -->
+
+<security:authorize access="hasRole('ADMIN')">
+	<div>
+		<a href="category/administrator/edit.do"> <spring:message
+				code="category.create" />
+		</a>
+	</div>
+</security:authorize>
