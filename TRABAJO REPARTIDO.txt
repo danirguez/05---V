@@ -4,7 +4,7 @@ a -> Terminado (Alfonso)
 b -> Terminado (Alfonso)
 c -> ¿Alfonso y Dani?
 d -> Terminado (Alfonso)
-e -> ¿Hay que hacerlo para todos los actores, o solo para actor general?
+e -> Terminado (Dani y Alfonso)
 f -> Terminado (Alfonso)
 g -> Terminado (Dani)
 h -> Terminado (Dani)

@@ -22,7 +22,7 @@
 
 <security:authorize access="hasRole('AUDITOR') or hasRole('MANAGER')">
 <display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="note" requestURI="${requestURI}" id="row">
+	name="note" requestURI="note/list.do" id="row">
 	
 	<security:authorize access="hasRole('AUDITOR')">
 	<spring:message code="note.edit" var="editHeader" />
@@ -55,5 +55,12 @@
 	<spring:message code="note.trip" var="tripHeader" />
 	<display:column property="trip" title="${tripHeader}"	sortable="true" />
 
+	<security:authorize access="hasRole('AUDITOR')">
+		<div>
+		<a href="note/auditor/edit.do"> <spring:message
+				code="note.create" />
+		</a>
+	</div>
+	</security:authorize>
 </display:table>
 </security:authorize>
