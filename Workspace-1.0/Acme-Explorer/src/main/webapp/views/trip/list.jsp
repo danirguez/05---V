@@ -49,6 +49,12 @@
 	
 	<spring:message code="trip.category" var="categoryHeader" />
 	<display:column property="category" title="${categoryHeader}"	sortable="true" />
+	
+	<spring:message code="trip.audit" var="auditHeader" />
+	<display:column>
+		<a href= "audit/list.do?tripId=${row.id}">
+		<spring:message code="trip.audit" var="auditHeader" /></a>
+	</display:column>
 </display:table>
 
 <!-- Action links -->

@@ -25,13 +25,7 @@
 	
 	<form:hidden path="auditor" />
 	<form:hidden path="draftMode" />
-	
-	<form:label path="moment">
-		<spring:message code="audit.moment" />:
-	</form:label>
-	<form:input path="moment" />
-	<form:errors cssClass="error" path="moment" />
-	<br />
+	<form:hidden path="moment" />
 	
 	<form:label path="title">
 		<spring:message code="audit.title" />:
@@ -52,6 +46,17 @@
 	</form:label>
 	<form:input path="attachment" />
 	<form:errors cssClass="error" path="attachment" />
+	<br />
+	
+	<form:label path="draftMode">
+		<spring:message code="audit.draftMode" />:
+	</form:label>
+	<form:select path="draftMode">
+        <form:option value="YES"/>
+        <form:option value="NO"/>
+	</form:select>
+	<form:input path="draftMode" />
+	<form:errors cssClass="error" path="draftMode" />
 	<br />
 	
 	<form:label path="trip">
@@ -75,7 +80,7 @@
 			onclick="return confirm('<spring:message code="audit.confirm.delete" />')" />&nbsp;
 	</jstl:if>
 	<input type="button" name="cancel"
-		value="<spring:message code="application.cancel" />"
+		value="<spring:message code="audit.cancel" />"
 		onclick="javascript: relativeRedir('/');" />
 	<br />
 	
