@@ -17,7 +17,7 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
 <security:authorize access="hasRole('EXPLORER')">
-<form:form action="survival/register.do" modelAttribute="survival">	
+<form:form action="survival/explorer/register.do" modelAttribute="survival">	
 
 	<form:hidden path="id" />
 	<form:hidden path="version" />
@@ -45,12 +45,6 @@
 	
 	<input type="submit" name="save"
 		value="<spring:message code="survival.save" />" />&nbsp; 
-		
-		
-	<input type="button" name="cancel"
-		value="<spring:message code="survival.cancel" />"
-		onclick="javascript: relativeRedir('/');" />
-	<br />
 	
 </form:form>
 </security:authorize>
