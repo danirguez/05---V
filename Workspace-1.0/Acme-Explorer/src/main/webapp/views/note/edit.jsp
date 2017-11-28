@@ -19,7 +19,7 @@
 <%@taglib prefix="security"	uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
-<form:form action="note/auditor/edit.do" modelAttribute="note">
+<form:form action="note/edit.do" modelAttribute="note">
 	
 <security:authorize access="hasRole('AUDITOR')">
 	
@@ -58,7 +58,7 @@
 	
 	<input type="submit" name="save"
 		value="<spring:message code="note.save" />" />&nbsp; 
-	<jstl:if test="${audit.id != 0}">
+	<jstl:if test="${note.id != 0}">
 		<input type="submit" name="delete"
 			value="<spring:message code="note.delete" />"
 			onclick="return confirm('<spring:message code="note.confirm.delete" />')" />&nbsp;

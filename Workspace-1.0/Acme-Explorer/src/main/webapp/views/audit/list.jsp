@@ -22,7 +22,7 @@
 <!-- Listing grid -->
 
 <display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="audits" requestURI="${requestURI}" id="row">
+	name="audits" requestURI="audit/auditor/list.do" id="row">
 	
 	<!-- Attributes -->
 	
@@ -40,7 +40,39 @@
 		<spring:message code="audit.edit" var="editHeader" /></a>
 	</display:column>
 	
+	<spring:message code="audit.moment" var="momentHeader" />
+	<display:column property="moment" title="${momentHeader}" sortable="true" />
+	
+	<spring:message code="audit.title" var="titleHeader" />
+	<display:column property="title" title="${titleHeader}" sortable="true" />
+	
+	<spring:message code="audit.description" var="descriptionHeader" />
+	<display:column property="description" title="${descriptionHeader}" sortable="false" />
+	
+	<spring:message code="audit.attachment" var="attachmentHeader" />
+	<display:column property="attachment" title="${attachmentHeader}" sortable="false" />
+	
+	<spring:message code="audit.draftMode" var="draftModeHeader" />
+	<display:column property="draftMode" title="${draftModeHeader}" sortable="true" />
+	
+	<spring:message code="audit.trip" var="tripHeader" />
+	<display:column property="trip" title="${tripHeader}" sortable="true" />
+	
+	<spring:message code="audit.auditor" var="auditorHeader" />
+	<display:column property="auditor" title="${auditorHeader}" sortable="true" />
+	
+	<div>
+		<a href="audit/auditor/edit.do"> <spring:message
+				code="audit.create" />
+		</a>
+	</div>
+	
 	</security:authorize>
+	
+</display:table>
+
+<display:table pagesize="5" class="displaytag" keepStatus="true"
+	name="audits" requestURI="audit/list.do" id="row">
 	
 	<spring:message code="audit.moment" var="momentHeader" />
 	<display:column property="moment" title="${momentHeader}" sortable="true" />
