@@ -23,9 +23,12 @@
 
 <security:authorize access="hasRole('EXPLORER')">
 <display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="applicationExplorer" requestURI="${requestURI}" id="row">
+	name="applicationExplorer" requestURI="application/explorer/list.do" id="row">
 	
 	<!-- Attributes -->
+
+	<spring:message code="application.moment" var="momentHeader" />
+	<display:column property="moment" title="${momentHeader}" sortable="true" />
 
 	<spring:message code="application.status" var="statusHeader" />
 	<display:column property="status" title="${statusHeader}" sortable="true" />
@@ -47,9 +50,12 @@
 
 <security:authorize access="hasRole('MANAGER')">
 <display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="applicationManager" requestURI="${requestURI}" id="row">
+	name="applicationManager" requestURI="application/manager/list.do" id="row">
 	
 	<!-- Attributes -->
+	
+	<spring:message code="application.moment" var="momentHeader" />
+	<display:column property="moment" title="${momentHeader}" sortable="true" />
 
 	<spring:message code="application.status" var="statusHeader" />
 	<display:column property="status" title="${statusHeader}" sortable="true" />
@@ -61,10 +67,42 @@
 	<display:column property="reason" title="${reasonHeader}" sortable="false" />
 
 	<spring:message code="application.creditcard" var="creditcardHeader" />
-	<display:column property="creditcard" title="${creditcardHeader}"	sortable="false" />
+	<display:column>
+		<jstl:choose>
+			<jstl:when test="${statusHeader == 'DUE'}">
+				<a href= "application/manager/createCC.do?applicationId=${row.id}">
+				<spring:message code="application.creditCard" var="createCreditCardHeader" /></a>
+			</jstl:when>
+			<jstl:when test="${statusHeader == 'ACCEPTED' }">
+				${creditcardHeader}
+			</jstl:when>
+			<jstl:otherwise>
+				<spring:message code="application.notApply" var="notApplyHeader" />
+			</jstl:otherwise>
+		</jstl:choose>
+	</display:column>
 	
 	<spring:message code="application.trip" var="tripHeader" />
 	<display:column property="trip" title="${tripHeader}"	sortable="true" />
+	
+	<spring:message code="application.change" var="changeHeader" />
+	<display:column>
+		<jstl:choose>
+			<jstl:when test="${statusHeader == 'PENDING' or statusHeader == 'ACCEPTED'}">
+				<jstl:if test="${statusHeader == 'ACCEPTED'}">
+					<a href= "application/manager/editAccepted.do?applicationId=${row.id}">
+					<spring:message code="application.change" var="changeHeader" /></a>
+				</jstl:if>
+				<jstl:if test="${statusHeader == 'PENDING'}">
+					<a href= "application/manager/editApplication.do?applicationId=${row.id}">
+					<spring:message code="application.change" var="changeHeader" /></a>
+				</jstl:if>
+			</jstl:when>
+			<jstl:otherwise>
+				<spring:message code="application.notApply" var="notApplyHeader" />
+			</jstl:otherwise>
+		</jstl:choose>
+	</display:column>
 	
 </display:table>
 </security:authorize>
