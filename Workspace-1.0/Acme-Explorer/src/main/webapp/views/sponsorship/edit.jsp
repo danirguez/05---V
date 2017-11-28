@@ -19,9 +19,14 @@
 <%@taglib prefix="security"	uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 
-<form:form action="sponsor/sponsorship/edit.do" modelAttribute="sponsorship">
+<form:form action="sponsorship/sponsor/edit.do" modelAttribute="sponsorship">
 	
 	<security:authorize access="hasRole('SPONSOR')">
+	
+	<form:hidden path="id" />
+	<form:hidden path="version" />
+	
+	<form:hidden path="sponsor" />
 	
 	<form:label path="banner">
 		<spring:message code="sponsorship.banner" />:
@@ -44,16 +49,17 @@
 	<form:errors cssClass="error" path="creditCard" />
 	<br />
 	
-	<form:label path="sponsor">
-		<spring:message code="sponsorship.sponsor" />:
+	<form:label path="creditCard">
+		<spring:message code="sponsorship.creditCard" />:
 	</form:label>
-	<form:select path="sponsor">
-		<jstl:forEach var="sponsor" items=${row.trip }>
-              <form:option value="${sponsor}">${sponsor.name}</form:option>
+	<form:select path="creditCard">
+			<form:option value="None"/>
+		<jstl:forEach var="creditCard" items=${row.creditCard }>
+            <form:option value="${creditCard}">${creditCard.name}</form:option>
 		</jstl:forEach>
 	</form:select>
-	<form:input path="sponsor" />
-	<form:errors cssClass="error" path="sponsor" />
+	<form:input path="creditCard" />
+	<form:errors cssClass="error" path="creditCard" />
 	<br />
 	
 	<form:label path="trip">
@@ -68,7 +74,6 @@
 	<form:errors cssClass="error" path="trip" />
 	<br />
 
-
 	<input type="submit" name="save"
 		value="<spring:message code="sponsorship.save" />" />&nbsp; 
 	<jstl:if test="${sponsorship.id != 0}">
@@ -77,7 +82,7 @@
 			onclick="return confirm('<spring:message code="sponsorship.confirm.delete" />')" />&nbsp;
 	</jstl:if>
 	<input type="button" name="cancel"
-		value="<spring:message code="application.cancel" />"
+		value="<spring:message code="sponsorship.cancel" />"
 		onclick="javascript: relativeRedir('/');" />
 	<br />
 	

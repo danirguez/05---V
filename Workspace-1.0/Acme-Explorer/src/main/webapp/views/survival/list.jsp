@@ -23,9 +23,15 @@
 
 <security:authorize access="hasRole('MANAGER')">
 <display:table pagesize="5" class="displaytag" keepStatus="true"
-	name="survival" requestURI="${requestURI}" id="row">
+	name="survival" requestURI="survival/manager/list.do" id="row">
 	
 	<!-- Attributes -->
+	<spring:message code="survival.edit" var="editHeader" />
+	<display:column>
+		<a href= "survival/manager/edit.do?survivalId=${row.id}">
+		<spring:message code="survival.edit" var="editHeader" /></a>
+	</display:column>
+	
 	<spring:message code="survival.title" var="titleHeader" />
 	<display:column property="title" title="${titleHeader}" sortable="true" />
 
@@ -37,9 +43,6 @@
 
 	<spring:message code="survival.location" var="locationHeader" />
 	<display:column property="location" title="${locationHeader}"	sortable="true" />
-	
-	<spring:message code="survival.manager" var="managerHeader" />
-	<display:column property="manager" title="${managerHeader}"	sortable="true" />
 	
 	<spring:message code="survival.trip" var="tripHeader" />
 	<display:column property="trip" title="${tripHeader}"	sortable="true" />
