@@ -94,7 +94,7 @@
 					<spring:message code="application.change" var="changeHeader" /></a>
 				</jstl:if>
 				<jstl:if test="${statusHeader == 'PENDING'}">
-					<a href= "application/manager/editApplication.do?applicationId=${row.id}">
+					<a href= "application/manager/editPending.do?applicationId=${row.id}">
 					<spring:message code="application.change" var="changeHeader" /></a>
 				</jstl:if>
 			</jstl:when>

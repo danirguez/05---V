@@ -1,5 +1,5 @@
 <%--
- * trip.jsp
+ * edit.jsp
  *
  * Copyright (C) 2017 Universidad de Sevilla
  * 
@@ -20,44 +20,18 @@
 
 	<security:authorize access="hasRole('EXPLORER')">
 
+	<form:hidden path="moment" />
+	<form:hidden path="status" />
+	<form:hidden path="reason" />
+	<form:hidden path="creaditCard" />
 	<form:hidden path="manager" />
-
-	<form:label path="status">
-		<spring:message code="application.status" />:
-	</form:label>
-	<form:select path="status">
-              <form:option value="PENDING"/>
-              <form:option value="REJECTED"/>
-              <form:option value="DUE"/>
-              <form:option value="ACCEPTED"/>
-              <form:option value="CANCELLED"/>
-    </form:select>
-	<br />
+	<form:hidden path="explorer" />
 	
 	<form:label path="comment">
 		<spring:message code="application.comment" />:
 	</form:label>
 	<form:input path="comment" />
 	<form:errors cssClass="error" path="comment" />
-	<br />
-	
-	<form:label path="reason">
-		<spring:message code="application.reason" />:
-	</form:label>
-	<form:input path="reason" />
-	<form:errors cssClass="error" path="reason" />
-	<br />
-	
-	<form:label path="creditcard">
-		<spring:message code="application.creditcard" />:
-	</form:label>
-	<form:select path="creditcard">
-		<jstl:forEach var="creditcard" items=${row.creditcard }>
-              <form:option value="${creditcard}">${creditcard.number}</form:option>
-		</jstl:forEach>
-	</form:select>
-	<form:input path="creditcard" />
-	<form:errors cssClass="error" path="creditcard" />
 	<br />
 	
 	<form:label path="trip">
@@ -74,14 +48,9 @@
 	
 	<input type="submit" name="save"
 		value="<spring:message code="application.save" />" />&nbsp; 
-	<jstl:if test="${application.id != 0}">
-		<input type="submit" name="delete"
-			value="<spring:message code="application.delete" />"
-			onclick="return confirm('<spring:message code="application.confirm.delete" />')" />&nbsp;
-	</jstl:if>
 	<input type="button" name="cancel"
 		value="<spring:message code="application.cancel" />"
-		onclick="javascript: relativeRedir('/');" />
+		onclick="javascript: relativeRedir('/application/explorer/list.do');" />
 	<br />
 	</security:authorize>
 </form:form>
