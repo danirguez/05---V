@@ -30,7 +30,6 @@
 	
 	<form:hidden path="ranger" />
 	<form:hidden path="manager" />
-	<form:hidden path="category" />
 	<form:hidden path="legalText" />
 	<form:hidden path="application" />
 	<form:hidden path="value" />
